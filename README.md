@@ -1,7 +1,7 @@
 # mariadb-bench
 
 ## Purpose
-To Benchmark mariadb docker container using sysbench OLTP test with a ramdisk (no disk influence, only cpu and ram).
+To Benchmark mariadb docker container using sysbench OLTP test with a ramdisk (no disk bottleneck, only cpu and ram).
 
 ## Requirements 
 Only docker, docker-compose and sysbench :-) 
