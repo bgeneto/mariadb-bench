@@ -4,12 +4,22 @@
 To Benchmark mariadb docker container using sysbench OLTP test with a ramdisk (no disk influence, only cpu and ram).
 
 ## Requirements 
-Only docker and sysbench :-) 
+Only docker, docker-compose and sysbench :-) 
 
 ```bash
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-sudo apt -y install sysbench
+sudo apt install sysbench docker-compose-plugin -y
+```
+
+## Install 
+
+```bash
+git clone https://github.com/bgeneto/mariadb-bench.git
+cd mariadb-bench
+docker compose up -d 
+chmod +x ./start.sh 
+./start.sh 
 ```
 
 ## Usage 
