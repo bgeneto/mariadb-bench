@@ -34,7 +34,7 @@ export sbdb=mysql
 #export sbdb=pgsql
 
 # populate test tables with data
-$ sysbench /usr/share/sysbench/oltp_read_write.lua \
+sysbench /usr/share/sysbench/oltp_read_write.lua \
 --db-driver=$sbdb --$sbdb-host=$sbhost --$sbdb-port=$sbport --$sbdb-user=sbtest --$sbdb-password=sbtesting \
 --threads=$sbthreads --tables=$sbtables --table-size=1000000 prepare
 ```
@@ -45,7 +45,8 @@ Perform a read-write bench first.
 ```bash
 sysbench /usr/share/sysbench/oltp_read_write.lua \
 --db-driver=$sbdb --$sbdb-host=$sbhost --$sbdb-port=$sbport --$sbdb-user=sbtest --$sbdb-password=sbtesting \
---threads=$sbthreads --tables=$sbtables --table-size=1000000 prepare
+--threads=$sbthreads --events=0 --tables=$sbtables --table-size=1000000 \
+ --time=$sbtime --report-interval=10 run
 ```
 
 ## Read bench twice 
