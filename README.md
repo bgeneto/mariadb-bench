@@ -193,5 +193,13 @@ Threads fairness:
 Removes data and tables.
 
 ```
-sysbench /usr/share/sysbench/oltp_read_write.lua --threads=$sbthreads --mysql-host=$sbhost --mysql-port=$sbport --mysql-user=sbtest --mysql-password=sbtesting --tables=$sbtables --table-size=1000000 cleanup
+sysbench /usr/share/sysbench/oltp_read_write.lua --threads=$sbthreads --mysql-host=$sbhost \
+--mysql-port=$sbport --mysql-user=sbtest --mysql-password=sbtesting --tables=$sbtables \
+--table-size=1000000 cleanup
+```
+
+Stop the container
+
+```
+docker compose down
 ```
