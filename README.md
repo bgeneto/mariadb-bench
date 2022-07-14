@@ -70,9 +70,10 @@ sysbench /usr/share/sysbench/oltp_read_only.lua \
 
 ## Baseline results 
 
-It follows some results for AMD Ryzen 5 5600X running Clearlinux OS.
+### AMD Ryzen 5 5600X
+It follows some results for AMD Ryzen 5 5600X (DDR4 3200) running Clearlinux OS.
 
-### Read results
+#### Read results
 ```
 SQL statistics:
     queries performed:
@@ -98,7 +99,7 @@ Latency (ms):
          sum:                               479386.26
 ```
 
-### Read-Write results
+#### Read-Write results
 
 ```
 SQL statistics:
@@ -123,6 +124,68 @@ Latency (ms):
          max:                                   60.16
          95th percentile:                        1.01
          sum:                               479670.64
+```
+
+### Intel i5 12600K
+It follows results from a Intel i5 12600K (DDR4 3600) cpu running pop os! 22.04. 
+
+#### Read results
+```
+SQL statistics:
+    queries performed:
+        read:                            25960860
+        write:                           0
+        other:                           5192172
+        total:                           31153032
+    transactions:                        2596086 (21633.74 per sec.)
+    queries:                             31153032 (259604.84 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+General statistics:
+    total time:                          120.0010s
+    total number of events:              2596086
+
+Latency (ms):
+         min:                                    0.14
+         avg:                                    0.18
+         max:                                    4.25
+         95th percentile:                        0.39
+         sum:                               479267.39
+
+Threads fairness:
+    events (avg/stddev):           649021.5000/1669.67
+    execution time (avg/stddev):   119.8168/0.00
+```
+
+#### Read-Write results
+
+```
+SQL statistics:
+    queries performed:
+        read:                            9662030
+        write:                           2760580
+        other:                           1380290
+        total:                           13802900
+    transactions:                        690145 (5751.12 per sec.)
+    queries:                             13802900 (115022.41 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+General statistics:
+    total time:                          120.0011s
+    total number of events:              690145
+
+Latency (ms):
+         min:                                    0.54
+         avg:                                    0.70
+         max:                                    8.60
+         95th percentile:                        1.27
+         sum:                               479670.43
+
+Threads fairness:
+    events (avg/stddev):           172536.2500/833.06
+    execution time (avg/stddev):   119.9176/0.00
 ```
 
 ### Cleanup
