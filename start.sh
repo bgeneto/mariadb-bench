@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # requires sudo to create directories and ramdisk
 if [ "$EUID" -ne 0 ]
